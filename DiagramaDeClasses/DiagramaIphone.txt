@@ -1,0 +1,51 @@
+Diagrama UML do iPhone
+
+Classes:
+
+iPhone: Representa o dispositivo iPhone em si.
+ReprodutorMusical: Representa a funcionalidade de reprodutor de música do iPhone.
+AparelhoTelefonico: Representa a funcionalidade de telefone do iPhone.
+NavegadorInternet: Representa a funcionalidade de navegador de internet do iPhone.
+Atributos:
+
+iPhone:
+marca: String
+modelo: String
+armazenamento: int
+ReprodutorMusical:
+musicaAtual: String
+estaTocando: boolean
+AparelhoTelefonico:
+numeroChamado: String
+emChamada: boolean
+NavegadorInternet:
+urlAtual: String
+abasAbertas: List<String>
+Métodos:
+
+iPhone:
+ligar(String numero): void - Encaminha para AparelhoTelefonico.ligar(numero)
+tocarMusica(String musica): void - Encaminha para ReprodutorMusical.tocar(musica)
+abrirPagina(String url): void - Encaminha para NavegadorInternet.exibirPagina(url)
+ReprodutorMusical:
+tocar(): void
+pausar(): void
+selecionarMusica(String musica): void
+AparelhoTelefonico:
+ligar(String numero): void
+atender(): void
+iniciarCorreioVoz(): void
+NavegadorInternet:
+exibirPagina(String url): void
+adicionarNovaAba(): void
+atualizarPagina(): void
+Relacionamentos:
+
+Agregação:
+iPhone agrega ReprodutorMusical
+iPhone agrega AparelhoTelefonico
+iPhone agrega NavegadorInternet
+Associação:
+ReprodutorMusical toca Musica
+AparelhoTelefonico faz chamadas para NumeroTelefone
+NavegadorInternet acessa Pagina
